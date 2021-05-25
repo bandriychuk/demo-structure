@@ -25,20 +25,21 @@ public class UsersTest {
 	private final UserApiService userApiService = new UserApiService();
 	private Faker faker;
 
-//	@BeforeClass
-//	public void setUp() {
-//		ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
-//		faker = new Faker(new Locale(config.locale()));
-//		RestAssured.baseURI = config.baseUrl();
-//	}
-
 	@BeforeClass
 	public void setUp() {
-		Map myVars = new HashMap();
-		ProjectConfig config = ConfigFactory.create(ProjectConfig.class,myVars);
+		ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 		faker = new Faker(new Locale(config.locale()));
-		RestAssured.baseURI = config.prodEnv();
+		RestAssured.baseURI = config.baseUrl();
 	}
+
+//	@BeforeClass
+//	public void setUp() {
+//		Map myVars = new HashMap();
+//		ProjectConfig config = ConfigFactory.create(ProjectConfig.class,myVars);
+//		faker = new Faker(new Locale(config.locale()));
+////		RestAssured.baseURI = config.prodEnv();
+//		RestAssured.baseURI = config.baseUrl();
+//	}
 
 //	@BeforeClass
 //	public void setUp() {

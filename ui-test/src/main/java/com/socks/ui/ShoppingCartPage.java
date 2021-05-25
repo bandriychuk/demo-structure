@@ -18,7 +18,7 @@ public class ShoppingCartPage {
 	}
 
 	public ShoppingCartPage deleteItem(){
-		$("#cart-list > tr > td:ntn-child(8) > a > i").click();
+//		$("#cart-list > tr > td:ntn-child(8) > a > i").click();
 		return this;
 	}
 

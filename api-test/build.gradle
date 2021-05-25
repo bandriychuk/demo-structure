@@ -14,7 +14,7 @@ repositories {
 
 ext {
     restAssuredVersion = '4.3.3'
-    testNgVersion = '6.14.3'
+    testNgVersion = '6.13'
 }
 
 dependencies {
@@ -54,7 +54,8 @@ allure{
 
     resultsDir = file('api-test/build/allure-results')
     reportDir = file('api-test/build/allure-results')
-    useTestNG{
-        version ='2.12.1'
-    }
+
+//    useTestNG{
+//        version ='2.13.9'
+//    }
 }

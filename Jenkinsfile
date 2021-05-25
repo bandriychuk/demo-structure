@@ -15,6 +15,9 @@ stage("run ui tests"){
 sh "./gradlew ui-test:test"
 }
 
+ post {
+          always {
+            script {
 allure([
 includeProperties = false,
 jdk: '',
@@ -22,5 +25,6 @@ properties: [],
 reportBuildPolicy: 'ALWAYS',
 results: [[path: 'api-test/build/allure-results'], [path: 'ui-test/build/allure-results']]
 ])
-
+}
+}
 }

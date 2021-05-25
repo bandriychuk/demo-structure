@@ -1,19 +1,23 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories{
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    //important! We should 'Enable annotation processing in Project setup'
+    dependencies {
+        classpath "io.franzbecker:gradle-lombok:3.1.0"
+        classpath "io.qameta.allure:allure-gradle:2.8.1"
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.franzbecker.gradle-lombok'
+    apply plugin: 'io.qameta.allure'
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-test {
-    useJUnitPlatform()
+    repositories {
+        jcenter()
+    }
 }

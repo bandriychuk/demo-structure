@@ -1,0 +1,4 @@
+rootProject.name = 'demo-structure'
+include 'api-test'
+include 'ui-test'
+

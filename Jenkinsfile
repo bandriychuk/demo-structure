@@ -17,11 +17,11 @@ sh "./gradlew ui-test:test"
 
 stage("allure"){
 allure([
-            includeProperties = false,
-            jdk: '',
-            properties: [],
-            reportBuildPolicy: 'ALWAYS',
-            results: [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
-       ])
-       }
+includeProperties = false,
+jdk: '',
+properties: [],
+reportBuildPolicy: 'ALWAYS',
+results: [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
+])
+}
 }

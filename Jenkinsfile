@@ -1,7 +1,7 @@
 node {
        stage("checkout repo"){
              git branch: 'master',
-             credentialsId: 'e900de22b8ed0f144095827c4bbbd75f6c86d67f',
+             credentialsId: 'ad523aab-5236-4c3f-b332-c94fbe5fd5cb',
              url: 'https://github.com/bandriychuk/demo-structure.git'
        }
 

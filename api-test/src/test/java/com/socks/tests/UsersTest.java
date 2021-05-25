@@ -29,7 +29,7 @@ public class UsersTest {
 	public void setUp() {
 		ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 		faker = new Faker(new Locale(config.locale()));
-		RestAssured.baseURI = config.baseUrl();
+		RestAssured.baseURI = config.prodEnv();
 	}
 
 //	@BeforeClass

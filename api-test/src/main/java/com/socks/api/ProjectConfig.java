@@ -9,7 +9,7 @@ public interface ProjectConfig extends Config {
 	@Key("prodEnv")
 	String prodEnv();
 
-	@Key("testEnv")
+	@Key("prodEnv")
 	String testEnv();
 
 	@Key("baseUrl")

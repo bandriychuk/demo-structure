@@ -29,16 +29,16 @@ test {
     test.outputs.upToDateWhen { false }
 }
 
-allure{
-    version = '2.5.0'
-    aspectjweaver = 'true'
-    configuration = 'compile'
-    autoconfigure = true
-
-    resultsDir = file('ui-test/build/allure-results')
-    reportDir = file('build/allure-results')
-
-    useTestNG{
-        version ='2.13.9'
-    }
-}
+//allure{
+//    version = '2.5.0'
+//    aspectjweaver = 'true'
+//    configuration = 'compile'
+//    autoconfigure = true
+//
+//    resultsDir = file('ui-test/build/allure-results')
+//    reportDir = file('build/allure-results')
+//
+//    useTestNG{
+//        version ='2.13.9'
+//    }
+//}

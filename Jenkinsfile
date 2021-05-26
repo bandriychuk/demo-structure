@@ -6,7 +6,7 @@ node {
       }
 
       stage("build"){
-           sh "./gradlew api-test:assemble"
+           sh "./gradlew clean api-test:assemble"
            }
 
       stage("run api tests"){
@@ -23,7 +23,7 @@ node {
               jdk              : '',
               properties       : [],
               reportBuildPolicy: 'ALWAYS',
-              results          : [[path: 'ui-test/build/allure-results'],[path: 'api-test/build/allure-results']]
+              results          : [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
           ])
       }
 }

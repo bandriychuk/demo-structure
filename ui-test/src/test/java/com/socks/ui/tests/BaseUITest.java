@@ -13,7 +13,7 @@ public class BaseUITest {
 	@BeforeClass
 	public void setUp(){
 		ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
-		RestAssured.baseURI = config.prodEnv();
+		RestAssured.baseURI = config.baseUrl();
 		Configuration.browser  = "com.socks.ui.SelenoidDriverProvider";
 	}
 

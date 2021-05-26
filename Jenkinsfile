@@ -17,11 +17,17 @@ node {
            sh "./gradlew ui-test:test"
            }
 
-      allure([
-           includeProperties = false,
-           jdk: '',
-           properties: [],
-           reportBuildPolicy: 'ALWAYS',
-           results: [path: 'api-test/build/allure-results']
-           ])
+    post {
+        always{
+           script{
+              allure([
+                 includeProperties = false,
+                 jdk: '',
+                 properties: [],
+                 reportBuildPolicy: 'ALWAYS',
+                 results: [path: 'api-test/build/allure-results']
+              ])
+           }
+        }
+    }
 }

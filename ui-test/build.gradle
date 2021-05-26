@@ -35,8 +35,8 @@ allure{
     configuration = 'compile'
     autoconfigure = true
 
-    resultsDir = file('ui-test/build/allure-results')
-    reportDir = file('ui-test/allure-results')
+    resultsDir = file('build/ui-test/report/allure-results')
+    reportDir = file('build/ui-test/report/allure-results')
 
     useTestNG{
         version ='2.13.9'

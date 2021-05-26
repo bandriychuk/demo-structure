@@ -33,39 +33,39 @@ public class ShoppingCartTest extends BaseUITest {
 		at(ShoppingCartPage.class).totalAmount().shouldHave(exactText("$104.98"));
 	}
 
-	@Test
-	public void testCanDeletedItemFromCart() {
-		ShoppingCartPage.open();
-		String cookies = WebDriverRunner.getWebDriver().manage().getCookieNamed("md.sid").getValue();
-
-		cartApiService.addItemToCart("3395a43e-2d88-40de-b95f-e00e1502085b", cookies);
-		cartApiService.getCartItems(cookies);
-
-		ShoppingCartPage
-				.open()
-				.deleteItem()
-				.totalAmount().shouldHave(exactText("$0.00"));
-	}
-
-	@Test
-	public void testUserCanLoginWithValidCredentials(){
-		UserPayload userPayload = new UserPayload()
-				.username(randomAlphabetic(6))
-				.email("demo@gmail.com")
-				.password("test1234");
-
-		userApiService.registerUser(userPayload)
-				.shouldHave(statusCode(200));
-
-		MainPage
-				.open()
-				.loginAs(userPayload.username(), userPayload.password());
-
-		LoggedUserPage loggedUserPage = at(LoggedUserPage.class);
-		loggedUserPage.logoutBtn().shouldHave(text("Logout"));
-		loggedUserPage.userName().shouldHave(text("Logged in as"));
-
-	}
+//	@Test
+//	public void testCanDeletedItemFromCart() {
+//		ShoppingCartPage.open();
+//		String cookies = WebDriverRunner.getWebDriver().manage().getCookieNamed("md.sid").getValue();
+//
+//		cartApiService.addItemToCart("3395a43e-2d88-40de-b95f-e00e1502085b", cookies);
+//		cartApiService.getCartItems(cookies);
+//
+//		ShoppingCartPage
+//				.open()
+//				.deleteItem()
+//				.totalAmount().shouldHave(exactText("$0.00"));
+//	}
+//
+//	@Test
+//	public void testUserCanLoginWithValidCredentials(){
+//		UserPayload userPayload = new UserPayload()
+//				.username(randomAlphabetic(6))
+//				.email("demo@gmail.com")
+//				.password("test1234");
+//
+//		userApiService.registerUser(userPayload)
+//				.shouldHave(statusCode(200));
+//
+//		MainPage
+//				.open()
+//				.loginAs(userPayload.username(), userPayload.password());
+//
+//		LoggedUserPage loggedUserPage = at(LoggedUserPage.class);
+//		loggedUserPage.logoutBtn().shouldHave(text("Logout"));
+//		loggedUserPage.userName().shouldHave(text("Logged in as"));
+//
+//	}
 
 	@AfterMethod
 	public void tearDown(){

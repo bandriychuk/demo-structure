@@ -17,7 +17,7 @@ node {
 //            sh "./gradlew ui-test:test"
 //            }
 
-//       stage('Publish tests results') {
+      stage('Publish tests results') {
           allure([
               includeProperties: true,
               jdk              : '',
@@ -25,5 +25,5 @@ node {
               reportBuildPolicy: 'ALWAYS',
               results          : [[path: 'api-test/build/allure-results']]
           ])
-//       }
+      }
 }

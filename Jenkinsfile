@@ -13,9 +13,9 @@ node {
            sh "./gradlew api-test:test"
            }
 
-      stage("run ui tests"){
-           sh "./gradlew ui-test:test"
-           }
+//       stage("run ui tests"){
+//            sh "./gradlew ui-test:test"
+//            }
 
       stage('Publish tests results') {
           allure([
@@ -23,7 +23,7 @@ node {
               jdk              : '',
               properties       : [],
               reportBuildPolicy: 'ALWAYS',
-              results          : [[path: 'api-test/build/allure-results'],[path: 'ui-test/build/allure-results']]
+              results          : [path: 'api-test/build/allure-results']
           ])
       }
 }

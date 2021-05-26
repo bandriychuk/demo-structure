@@ -18,5 +18,6 @@ public interface ProjectConfig extends Config {
 	@DefaultValue("ru")
 	String locale();
 
+
 	boolean logging();
 }

@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.socks.api.routes.Routes.address;
 
 public class ShoppingCartPage {
 
@@ -13,7 +14,7 @@ public class ShoppingCartPage {
 	}
 
 	public static ShoppingCartPage open(){
-		Selenide.open("http://167.172.178.86/basket.html");
+		Selenide.open(address +"/basket.html");
 		return new ShoppingCartPage();
 	}
 

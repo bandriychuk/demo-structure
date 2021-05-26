@@ -2,9 +2,12 @@ package com.socks.api.services;
 
 
 import com.socks.api.assertions.AssertableResponse;
+import com.socks.api.routes.Routes;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.socks.api.routes.Routes.address;
 
 public class CartApiService extends ApiService{
 
@@ -20,7 +23,7 @@ public class CartApiService extends ApiService{
 				.cookies(getCookie(sid))
 				.when()
 				.body("{\"id\":\"" + id + "\"}")
-				.post("http://167.172.178.86/cart")
+				.post(address+"/cart")
 		);
 	}
 
@@ -29,7 +32,7 @@ public class CartApiService extends ApiService{
 				setUp()
 						.cookies(getCookie(sid))
 						.when()
-						.get("http://167.172.178.86/cart"));
+						.get(address+"/cart"));
 	}
 
 }

@@ -4,11 +4,12 @@ package com.socks.ui;
 import com.codeborne.selenide.Selenide;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.socks.api.routes.Routes.address;
 
 public class CatalogPage {
 
 	public static CatalogPage open() {
-		Selenide.open("http://167.172.178.86/category.html");
+		Selenide.open(address+"/category.html");
 		return page(CatalogPage.class);
 	}
 

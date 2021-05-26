@@ -17,8 +17,10 @@ node {
            sh "./gradlew ui-test:test"
            }
 
-       stage("create report"){
+always {
+      stage("create report"){
            sh "./gradlew allureServe"
+           }
            }
 //       allure([
 //          includeProperties = false,

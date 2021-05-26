@@ -17,7 +17,7 @@ node {
 //            sh "./gradlew ui-test:test"
 //            }
 
-      stage('Publish tests results') {
+      script('Publish tests results') {
           allure([
               includeProperties: true,
               jdk              : '',

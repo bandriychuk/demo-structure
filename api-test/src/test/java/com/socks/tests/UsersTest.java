@@ -8,6 +8,7 @@ import com.socks.api.services.UserApiService;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -65,6 +66,11 @@ public class UsersTest {
 //				.shouldHave(statusCode(200))
 //				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
 //	}
+
+	@Test
+	public void tes(){
+		Assert.assertEquals(200,200);
+	}
 
 //	@Test
 //	public void testRegisterNewUser() {

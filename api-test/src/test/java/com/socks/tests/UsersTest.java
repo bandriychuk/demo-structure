@@ -66,33 +66,33 @@ public class UsersTest {
 				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
 	}
 
-	@Test
-	public void testRegisterNewUser() {
-		UserPayload user = new UserPayload()
-				.username(faker.name().username())
-				.firstName(faker.name().firstName())
-				.lastName(faker.name().lastName())
-				.email("test1@gmail.com")
-				.password("test1234");
-
-		userApiService.registerUser(user)
-				.shouldHave(statusCode(200));
-	}
-
-	@Test(enabled=false)
-	public void testsCanRegisterNewUserPojo() {
-		//given
-		UserPayload user = new UserPayload()
-				.username(RandomStringUtils.randomAlphabetic(6))
-				.email("test2@gmail.com")
-				.password("test1234");
-		//expect
-		UserRegistrationResponse response = userApiService.registerUser(user)
-				.shouldHave(statusCode(200))
-				.asPojo(UserRegistrationResponse.class);
-
-		response.id();
-	}
+//	@Test
+//	public void testRegisterNewUser() {
+//		UserPayload user = new UserPayload()
+//				.username(faker.name().username())
+//				.firstName(faker.name().firstName())
+//				.lastName(faker.name().lastName())
+//				.email("test1@gmail.com")
+//				.password("test1234");
+//
+//		userApiService.registerUser(user)
+//				.shouldHave(statusCode(200));
+//	}
+//
+//	@Test(enabled=false)
+//	public void testsCanRegisterNewUserPojo() {
+//		//given
+//		UserPayload user = new UserPayload()
+//				.username(RandomStringUtils.randomAlphabetic(6))
+//				.email("test2@gmail.com")
+//				.password("test1234");
+//		//expect
+//		UserRegistrationResponse response = userApiService.registerUser(user)
+//				.shouldHave(statusCode(200))
+//				.asPojo(UserRegistrationResponse.class);
+//
+//		response.id();
+//	}
 
 //	@Test
 //	public void testCanNotRegisterSameUserTwice() {

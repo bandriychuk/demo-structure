@@ -23,7 +23,7 @@ public class CartApiService extends ApiService{
 				.cookies(getCookie(sid))
 				.when()
 				.body("{\"id\":\"" + id + "\"}")
-				.post(address+"/cart")
+				.post("167.172.178.86/cart")
 		);
 	}
 
@@ -32,7 +32,7 @@ public class CartApiService extends ApiService{
 				setUp()
 						.cookies(getCookie(sid))
 						.when()
-						.get(address+"/cart"));
+						.get("167.172.178.86/cart"));
 	}
 
 }

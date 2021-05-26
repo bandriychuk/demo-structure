@@ -3,12 +3,11 @@ package com.socks.ui;
 import com.codeborne.selenide.Selenide;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.socks.ui.routes.Routes.address;
 
 public class MainPage {
 
 	public static MainPage open() {
-		Selenide.open(address);
+		Selenide.open("167.172.178.86");
 		return new MainPage();
 	}
 

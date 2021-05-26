@@ -1,15 +1,12 @@
 package com.socks.ui;
 
-
 import com.codeborne.selenide.Selenide;
-
 import static com.codeborne.selenide.Selenide.*;
-import static com.socks.ui.routes.Routes.address;
 
 public class CatalogPage {
 
 	public static CatalogPage open() {
-		Selenide.open(address+"/category.html");
+		Selenide.open("167.172.178.86/category.html");
 		return page(CatalogPage.class);
 	}
 

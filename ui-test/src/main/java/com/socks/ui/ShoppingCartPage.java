@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.socks.api.routes.Routes.address;
+import static com.socks.ui.routes.Routes.address;
 
 public class ShoppingCartPage {
 

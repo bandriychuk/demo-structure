@@ -17,13 +17,13 @@ node {
 //            sh "./gradlew ui-test:test"
 //            }
 
-      script('Publish tests results') {
+      stage('Publish tests results') {
           allure([
               includeProperties: true,
               jdk              : '',
               properties       : [],
               reportBuildPolicy: 'ALWAYS',
-              results          : [[path: 'api-test/build/allure-results']]
+              results          : [[path: 'build/reports/api-test/allure-results']]
           ])
       }
 }

@@ -55,7 +55,7 @@ allure{
     resultsDir = file('api-test/build/allure-results')
     reportDir = file('api-test/build/allure-results')
 
-//    useTestNG{
-//        version ='2.13.1'
-//    }
+    useTestNG{
+        version ='2.13.1'
+    }
 }

@@ -2,12 +2,9 @@ package com.socks.api.services;
 
 
 import com.socks.api.assertions.AssertableResponse;
-import com.socks.api.routes.Routes;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.socks.api.routes.Routes.address;
 
 public class CartApiService extends ApiService{
 

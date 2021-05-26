@@ -52,10 +52,10 @@ allure{
     configuration = 'compile'
     autoconfigure = true
 
-    resultsDir = file('build/api-test/report/allure-results')
-    reportDir = file('build/api-test/report/allure-results')
+    resultsDir = file('api-test/build/allure-results')
+    reportDir = file('api-test/build/allure-results')
 
-    useTestNG{
-        version ='2.13.9'
-    }
+//    useTestNG{
+//        version ='2.13.1'
+//    }
 }

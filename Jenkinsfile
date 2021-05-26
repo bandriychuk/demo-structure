@@ -19,11 +19,11 @@ node {
 
       stage('Publish tests results') {
           allure([
-              includeProperties: true,
-              jdk              : '',
-              properties       : [],
+              includeProperties: false,
+              jdk: '',
+              properties: [],
               reportBuildPolicy: 'ALWAYS',
-              results          : [[path: 'build/reports/api-test/allure-results']]
+              results: [[path: 'build/reports/api-test/allure-results']]
           ])
       }
 }

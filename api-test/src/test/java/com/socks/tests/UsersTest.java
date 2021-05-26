@@ -49,22 +49,22 @@ public class UsersTest {
 //		faker = new Faker(new Locale(config.locale()));
 //		RestAssured.baseURI = config.baseUrl();
 //	}
-
-	@Test
-	public void testsCanRegisterNewUser() {
-		//given
-		UserPayload user = new UserPayload()
-				.username(faker.name().username())
-				.firstName(faker.name().firstName())
-				.lastName(faker.name().lastName())
-				.phone(faker.phoneNumber().cellPhone())
-				.email("test1@gmail.com")
-				.password("test1234");
-		//expect
-		userApiService.registerUser(user)
-				.shouldHave(statusCode(200))
-				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
-	}
+//
+//	@Test
+//	public void testsCanRegisterNewUser() {
+//		//given
+//		UserPayload user = new UserPayload()
+//				.username(faker.name().username())
+//				.firstName(faker.name().firstName())
+//				.lastName(faker.name().lastName())
+//				.phone(faker.phoneNumber().cellPhone())
+//				.email("test1@gmail.com")
+//				.password("test1234");
+//		//expect
+//		userApiService.registerUser(user)
+//				.shouldHave(statusCode(200))
+//				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
+//	}
 
 //	@Test
 //	public void testRegisterNewUser() {

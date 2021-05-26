@@ -23,7 +23,7 @@ node {
               jdk              : '',
               properties       : [],
               reportBuildPolicy: 'ALWAYS',
-              result          : [path: 'api-test/build/allure-results']
+              results          : [path: 'api-test/build/allure-results']
           ])
 //       }
 }

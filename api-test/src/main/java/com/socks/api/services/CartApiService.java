@@ -20,7 +20,7 @@ public class CartApiService extends ApiService{
 				.cookies(getCookie(sid))
 				.when()
 				.body("{\"id\":\"" + id + "\"}")
-				.post("167.172.178.86/cart")
+				.post("46.101.196.212/cart")
 		);
 	}
 
@@ -29,7 +29,7 @@ public class CartApiService extends ApiService{
 				setUp()
 						.cookies(getCookie(sid))
 						.when()
-						.get("167.172.178.86/cart"));
+						.get("46.101.196.212/cart"));
 	}
 
 }

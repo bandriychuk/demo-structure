@@ -14,7 +14,7 @@ public class BaseUITest {
 	public void setUp(){
 		ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
 		RestAssured.baseURI = config.baseUrl();
-		Configuration.browser  = "com.socks.ui.SelenoidDriverProvider";
+		Configuration.browser  = "com.bt-10.ui.SelenoidDriverProvider";
 	}
 
 	protected <T> T at(Class <T> pageClass) {

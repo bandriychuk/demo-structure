@@ -2,28 +2,24 @@ package com.socks.tests;
 
 import com.github.javafaker.Faker;
 import com.socks.api.ProjectConfig;
-import com.socks.api.payloads.UserPayload;
-import com.socks.api.responses.UserRegistrationResponse;
+import com.socks.api.responses.UserLoginPayload;
+import com.socks.api.services.AuthenticationApiService;
 import com.socks.api.services.UserApiService;
+import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
-import static com.socks.api.conditions.Conditions.bodyField;
 import static com.socks.api.conditions.Conditions.statusCode;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
-import static org.hamcrest.Matchers.not;
 
 public class UsersTest {
 
 	private final UserApiService userApiService = new UserApiService();
+	private final AuthenticationApiService authenticationApiService = new AuthenticationApiService();
 	private Faker faker;
 
 	@BeforeClass
@@ -32,6 +28,12 @@ public class UsersTest {
 		faker = new Faker(new Locale(config.locale()));
 		RestAssured.baseURI = config.baseUrl();
 	}
+
+//	{
+//		"@context": "/api/contexts/User",
+//			"@id": "/api/users/31",
+//			"@type": "User"
+//	}
 
 //	@BeforeClass
 //	public void setUp() {
@@ -68,8 +70,39 @@ public class UsersTest {
 //	}
 
 	@Test
-	public void tes(){
+	@Epic(value = "Smoke testing")
+	@Feature(value = "Permission")
+	@Story(value = "Check Permission")
+	@Severity(value = SeverityLevel.CRITICAL)
+	public void invalidDataTest(){
+		Assert.assertEquals(200,201);
+	}
+
+	@Epic(value = "Smoke testing")
+	@Feature(value = "Permission")
+	@Story(value = "Check Permission")
+	@Severity(value = SeverityLevel.NORMAL)
+	@Test
+	public void validDataTest(){
 		Assert.assertEquals(200,200);
+	}
+
+	@Epic(value = "Smoke testing")
+	@Feature(value = "Permission")
+	@Story(value = "Check Permission")
+	@Severity(value = SeverityLevel.BLOCKER)
+	@Test
+	public void testUserLoginWithInvalidCredential1() {
+		//given
+		UserLoginPayload user = new UserLoginPayload()
+				.email("admin12@admin.com");// - is super admin // !!!!!!!! do not delete [!!!.password("admin");
+		//expect
+		authenticationApiService.loginUser(user)
+				.shouldHave(statusCode(401));
+		//                .shouldHave(bodyField("token", not(isEmptyOrNullString())))
+//                .shouldHave(bodyField("refresh_token", not(isEmptyOrNullString())));
+		//check email
+		//
 	}
 
 //	@Test

@@ -29,12 +29,6 @@ public class UsersTest {
 		RestAssured.baseURI = config.baseUrl();
 	}
 
-//	{
-//		"@context": "/api/contexts/User",
-//			"@id": "/api/users/31",
-//			"@type": "User"
-//	}
-
 //	@BeforeClass
 //	public void setUp() {
 //		Map myVars = new HashMap();
@@ -52,22 +46,23 @@ public class UsersTest {
 //		faker = new Faker(new Locale(config.locale()));
 //		RestAssured.baseURI = config.baseUrl();
 //	}
-//
-//	@Test
-//	public void testsCanRegisterNewUser() {
-//		//given
-//		UserPayload user = new UserPayload()
-//				.username(faker.name().username())
-//				.firstName(faker.name().firstName())
-//				.lastName(faker.name().lastName())
-//				.phone(faker.phoneNumber().cellPhone())
-//				.email("test1@gmail.com")
-//				.password("test1234");
-//		//expect
-//		userApiService.registerUser(user)
-//				.shouldHave(statusCode(200))
-//				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
-//	}
+
+
+	@Test
+	public void testsCanRegisterNewUser() {
+		//given
+		UserPayload user = new UserPayload()
+				.username(faker.name().username())
+				.firstName(faker.name().firstName())
+				.lastName(faker.name().lastName())
+				.phone(faker.phoneNumber().cellPhone())
+				.email("test1@gmail.com")
+				.password("test1234");
+		//expect
+		userApiService.registerUser(user)
+				.shouldHave(statusCode(200))
+				.shouldHave(bodyField("id", not(isEmptyOrNullString())));
+	}
 
 	@Test
 	@Epic(value = "Smoke testing")
@@ -105,47 +100,47 @@ public class UsersTest {
 		//
 	}
 
-//	@Test
-//	public void testRegisterNewUser() {
-//		UserPayload user = new UserPayload()
-//				.username(faker.name().username())
-//				.firstName(faker.name().firstName())
-//				.lastName(faker.name().lastName())
-//				.email("test1@gmail.com")
-//				.password("test1234");
-//
-//		userApiService.registerUser(user)
-//				.shouldHave(statusCode(200));
-//	}
-//
-//	@Test(enabled=false)
-//	public void testsCanRegisterNewUserPojo() {
-//		//given
-//		UserPayload user = new UserPayload()
-//				.username(RandomStringUtils.randomAlphabetic(6))
-//				.email("test2@gmail.com")
-//				.password("test1234");
-//		//expect
-//		UserRegistrationResponse response = userApiService.registerUser(user)
-//				.shouldHave(statusCode(200))
-//				.asPojo(UserRegistrationResponse.class);
-//
-//		response.id();
-//	}
+	@Test
+	public void testRegisterNewUser() {
+		UserPayload user = new UserPayload()
+				.username(faker.name().username())
+				.firstName(faker.name().firstName())
+				.lastName(faker.name().lastName())
+				.email("test1@gmail.com")
+				.password("test1234");
 
-//	@Test
-//	public void testCanNotRegisterSameUserTwice() {
-//		UserPayload user = new UserPayload()
-//				.firstName(faker.name().firstName())
-//				.lastName(faker.name().lastName())
-//				.email("test1@gmail.com")
-//				.password("test1234");
-//
-//		userApiService.registerUser(user)
-//				.shouldHave(statusCode(200));
-//
-//		userApiService.registerUser(user)
-//				.shouldHave(statusCode(500));
-//
-//	}
+		userApiService.registerUser(user)
+				.shouldHave(statusCode(200));
+	}
+
+	@Test(enabled=false)
+	public void testsCanRegisterNewUserPojo() {
+		//given
+		UserPayload user = new UserPayload()
+				.username(RandomStringUtils.randomAlphabetic(6))
+				.email("test2@gmail.com")
+				.password("test1234");
+		//expect
+		UserRegistrationResponse response = userApiService.registerUser(user)
+				.shouldHave(statusCode(200))
+				.asPojo(UserRegistrationResponse.class);
+
+		response.id();
+	}
+
+	@Test
+	public void testCanNotRegisterSameUserTwice() {
+		UserPayload user = new UserPayload()
+				.firstName(faker.name().firstName())
+				.lastName(faker.name().lastName())
+				.email("test1@gmail.com")
+				.password("test1234");
+
+		userApiService.registerUser(user)
+				.shouldHave(statusCode(200));
+
+		userApiService.registerUser(user)
+				.shouldHave(statusCode(500));
+
+	}
 }
